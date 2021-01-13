@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "77a66434-f90a-46bd-af7a-fbf181625673",
+		"name": "teste_django",
+		"description": "CRUD do teste Django. (METODOS GET - POST - PUT - DELETE)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET LISTA",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						""
+					]
+				},
+				"description": "Listagem de Produtos (Não precisa Login)"
+			},
+			"response": []
+		},
+		{
+			"name": "POST ADD",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "teste@teste.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "sc123**b",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"codigo_produto\": \"COD011\",\r\n    \"nome_produto\": \"TESTE011\",\r\n    \"valor_produto\": \"15.00\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/add",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"add"
+					]
+				},
+				"description": "Metodo para acrecentar produtos. (Precisa de login)"
+			},
+			"response": []
+		},
+		{
+			"name": "PUT UPDATE",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "teste@teste.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "sc123**b",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"codigo_produto\": \"COD001\",\r\n    \"nome_produto\": \"TESTE001\",\r\n    \"valor_produto\": \"150.00\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/update/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"update",
+						"1",
+						""
+					]
+				},
+				"description": "METODO PUT para atualização dos produtos"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE ",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "teste@teste.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "sc123**b",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/delete/11/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"delete",
+						"11",
+						""
+					]
+				},
+				"description": "Metodo para excluir os produtos"
+			},
+			"response": []
+		}
+	]
+}
